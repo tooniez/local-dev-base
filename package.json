@@ -1,0 +1,11 @@
+{
+  "name": "local-dev-base",
+  "version": "0.1.0",
+  "description": "This project provides a local development environment with essential services for building and testing modern web applications. It includes a variety of databases, caching solutions, search capabilities, object storage, and email testing tools, all containerized for easy setup.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}
