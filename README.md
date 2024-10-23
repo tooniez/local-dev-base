@@ -9,6 +9,7 @@ This project provides a local development environment with essential services fo
 - Elasticsearch for powerful full-text search and analytics
 - MinIO for S3-compatible object storage
 - MailHog for testing email functionality in a sandboxed environment
+- Nginx Proxy Manager for managing Nginx proxies
 
 All services are pre-configured with Docker Compose, allowing developers to quickly spin up a complete development stack with a single command. This setup ensures consistency across different development environments and simplifies the process of onboarding new team members.
 

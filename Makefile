@@ -19,5 +19,8 @@ up-minio:
 up-mailhog:
 	docker compose --env-file .env.local up mailhog --force-recreate -d
 
+up-nginx-proxy-manager:
+	docker compose --env-file .env.local up nginx-proxy-manager --force-recreate -d
+
 logs:
 	docker compose --env-file .env.local logs -f

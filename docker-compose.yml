@@ -73,6 +73,17 @@ services:
       - ${MAILHOG_SMTP_PORT:-1025}:1025
       - ${MAILHOG_WEB_PORT:-8025}:8025
 
+  nginx-proxy-manager:
+    image: 'docker.io/jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - nginx_proxy_manager_data:/data
+      - nginx_proxy_manager_data:/etc/letsencrypt
+
 volumes:
   mongodb_data:
     driver: local
@@ -83,4 +94,6 @@ volumes:
   elasticsearch_data:
     driver: local
   minio_data:
+    driver: local
+  nginx_proxy_manager_data:
     driver: local
