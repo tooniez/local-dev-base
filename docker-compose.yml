@@ -11,12 +11,23 @@ volumes:
     driver: local
   nginx_proxy_manager_data:
     driver: local
+  airflow_data:
+    driver: local
 
 networks:
   local:
     driver: bridge
 
 services:
+  airflow:
+    image: apache/airflow:latest-python3.12
+    container_name: airflow
+    restart: always
+    volumes:
+      - airflow_data:/opt/airflow
+    env_file:
+      - .env.local
+
   nocodb:
     image: nocodb/nocodb:latest
     container_name: nocodb
