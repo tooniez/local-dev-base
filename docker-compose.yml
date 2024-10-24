@@ -11,6 +11,11 @@ volumes:
     driver: local
   nginx_proxy_manager_data:
     driver: local
+
+networks:
+  local:
+    driver: bridge
+
 services:
   mongodb:
     image: mongo:latest
