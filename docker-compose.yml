@@ -17,6 +17,17 @@ networks:
     driver: bridge
 
 services:
+  nocodb:
+    image: nocodb/nocodb:latest
+    container_name: nocodb
+    restart: always
+    ports:
+      - 8080:8080
+    volumes:
+      - ./nocodb:/usr/app/data/
+    env_file:
+      - .env.local
+
   mongodb:
     image: mongo:latest
     container_name: mongodb
