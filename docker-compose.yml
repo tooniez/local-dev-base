@@ -23,10 +23,14 @@ services:
     image: apache/airflow:latest-python3.12
     container_name: airflow
     restart: always
+    ports:
+      - 8081:8081
     volumes:
       - airflow_data:/opt/airflow
+      - ./airflow:/airflow
     env_file:
       - .env.local
+    command: airflow webserver --port 8081 #changed to 8081 conflicts with nocodb (default 8080)
 
   nocodb:
     image: nocodb/nocodb:latest
