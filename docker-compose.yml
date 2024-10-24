@@ -1,3 +1,16 @@
+volumes:
+  mongodb_data:
+    driver: local
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  elasticsearch_data:
+    driver: local
+  minio_data:
+    driver: local
+  nginx_proxy_manager_data:
+    driver: local
 services:
   mongodb:
     image: mongo:latest
@@ -83,17 +96,3 @@ services:
     volumes:
       - nginx_proxy_manager_data:/data
       - nginx_proxy_manager_data:/etc/letsencrypt
-
-volumes:
-  mongodb_data:
-    driver: local
-  postgres_data:
-    driver: local
-  redis_data:
-    driver: local
-  elasticsearch_data:
-    driver: local
-  minio_data:
-    driver: local
-  nginx_proxy_manager_data:
-    driver: local
