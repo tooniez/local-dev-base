@@ -1,7 +1,10 @@
 up:
 	docker compose --env-file .env.local up --force-recreate -d
 
-up-mongodb:
+up: start up-mailhog up-nginx-proxy-manager up-nocodb up-airflow
+
+down:
+	docker compose down
 	docker compose --env-file .env.local up mongodb --force-recreate -d
 
 up-postgres:
@@ -22,5 +25,9 @@ up-mailhog:
 up-nginx-proxy-manager:
 	docker compose --env-file .env.local up nginx-proxy-manager --force-recreate -d
 
-logs:
-	docker compose --env-file .env.local logs -f
+up-nocodb:
+	docker compose --env-file .env.local up nocodb --force-recreate -d
+
+up-airflow:
+	docker compose --env-file .env.local up airflow --force-recreate -d
+
