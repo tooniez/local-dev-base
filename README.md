@@ -44,6 +44,18 @@ This project uses several services, all containerized using Docker:
 6. **MailHog**: Email testing tool
    - SMTP port: 1025
    - Web interface port: 8025
+7. **Nginx Proxy Manager**: Reverse proxy and SSL management
+   - HTTP port: 80
+   - HTTPS port: 443
+   - Admin interface port: 81
+
+8. **NocoDB**: No-code database platform
+   - Web interface port: 8080
+
+9. **Airflow**: Workflow management platform
+   - Default port: Not exposed (accessed through Nginx Proxy Manager)
+
+Each service is configured with environment variables and volumes for data persistence. Refer to the `docker-compose.yml` file for detailed configuration.
 
 ## Running the Project
 
