@@ -1,4 +1,4 @@
-up:
+up-all:
 	docker compose --env-file .env.local up --force-recreate -d
 
 up: start up-mailhog up-nginx-proxy-manager up-nocodb up-airflow
