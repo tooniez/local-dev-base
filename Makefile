@@ -31,3 +31,22 @@ up-nocodb:
 up-airflow:
 	docker compose --env-file .env.local up airflow --force-recreate -d
 
+# Help target
+.PHONY: help
+help:
+	@echo "Available targets:"
+	@echo "  up-all                  - Start all services with Colima and Docker Compose"
+	@echo "  up                      - Start essential services (mailhog, nginx-proxy-manager, nocodb)"
+	@echo "  down                    - Stop the Docker Compose services"
+	@echo "  start                   - Start Colima with specified resources"
+	@echo "  delete, clear           - Delete Colima services"
+	@echo "  up-database             - Start MongoDB, PostgreSQL, and NocoDB"
+	@echo "  up-redis                - Start Redis"
+	@echo "  up-elasticsearch        - Start Elasticsearch"
+	@echo "  up-minio                - Start MinIO"
+	@echo "  up-mailhog              - Start MailHog"
+	@echo "  up-nginx-proxy-manager  - Start Nginx Proxy Manager"
+	@echo "  up-nocodb               - Start NocoDB"
+	@echo "  up-airflow              - Start Airflow"
+	@echo "  logs                    - Show logs of all services"
+	@echo "  help                    - Show this help message"
